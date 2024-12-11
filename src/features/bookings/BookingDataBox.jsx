@@ -55,6 +55,7 @@ const Section = styled.section`
   padding: 3.2rem 4rem 1.2rem;
 `;
 
+
 const Guest = styled.div`
   display: flex;
   align-items: center;
@@ -66,10 +67,15 @@ const Guest = styled.div`
     font-weight: 500;
     color: var(--color-grey-700);
   }
+
+  @media (max-width: 600px) {
+    flex-direction: column;  /* Change to column on smaller screens */
+  }
 `;
 
 const Price = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 1.6rem 3.2rem;

@@ -51,6 +51,17 @@ const StyledNavLink = styled(NavLink)`
   &.active:visited svg {
     color: var(--color-brand-600);
   }
+
+  /* Hide text on small screens */
+  @media (max-width: 768px) {
+    span {
+      display: none;
+    }
+
+    /* Center align icons for better appearance */
+    justify-content: center;
+    padding: 1.2rem;
+  }
 `;
 
 function MainNav() {

@@ -9,10 +9,11 @@ import DurationChart from "./DurationChart";
 import TodayActivity from "../check-in-out/TodayActivity";
 
 const StyledDashboardLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 34rem auto;
-  gap: 2.4rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+ 
 `;
 
 function DashboardLayout() {

@@ -5,10 +5,26 @@ import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
 import Empty from "../../ui/Empty";
+import { useState, useEffect } from "react";
 
 function CabinTable() {
   const { isLoading, cabins } = useCabins();
   const [searchParams] = useSearchParams();
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  // Check screen width on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth <= 600);
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   if (isLoading) return <Spinner />;
   if (!cabins.length) return <Empty resourceName="cabins" />;
@@ -31,6 +47,21 @@ function CabinTable() {
     (a, b) => (a[field] - b[field]) * modifier
   );
 
+  // Render simplified view for small screens
+  if (isSmallScreen) {
+    return (
+      <Menus>
+        <Table>
+          <Table.Body
+            data={sortedCabins}
+            render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
+          />
+        </Table>
+      </Menus>
+    );
+  }
+
+  // Full view for larger screens
   return (
     <Menus>
       <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
@@ -44,8 +75,6 @@ function CabinTable() {
         </Table.Header>
 
         <Table.Body
-          // data={cabins}
-          // data={filteredCabins}
           data={sortedCabins}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />

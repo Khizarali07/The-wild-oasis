@@ -46,7 +46,7 @@ function BookingDetail() {
 
   return (
     <>
-      <Row type="horizontal">
+      <Row type="vertical">
         <HeadingGroup>
           <Heading as="h1">Booking #{bookingId}</Heading>
           <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>

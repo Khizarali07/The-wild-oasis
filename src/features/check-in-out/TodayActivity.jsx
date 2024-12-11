@@ -9,6 +9,7 @@ import TodayItem from "./TodayItem";
 
 const StyledToday = styled.div`
   /* Box */
+  width:250px;
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
@@ -23,7 +24,7 @@ const StyledToday = styled.div`
 
 const TodayList = styled.ul`
   overflow: scroll;
-  overflow-x: hidden;
+ 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

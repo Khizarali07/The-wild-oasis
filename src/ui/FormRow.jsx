@@ -22,8 +22,12 @@ const StyledFormRow = styled.div`
 
   &:has(button) {
     display: flex;
-    justify-content: flex-end;
     gap: 1.2rem;
+    justify-content: center;
+
+    @media (min-width: 600px) {
+      justify-content: flex-end; /* Justify to the end for wider screens */
+    }
   }
 `;
 

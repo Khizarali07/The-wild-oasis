@@ -12,6 +12,7 @@ import { useDarkMode } from "../../context/DarkModeContext";
 
 const ChartBox = styled.div`
   /* Box */
+  width:80vw;
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
@@ -150,14 +151,14 @@ function DurationChart({ confirmedStays }) {
     <ChartBox>
       <Heading as="h2">Stay duration summary</Heading>
       <ResponsiveContainer width="100%" height={240}>
-        <PieChart>
+        <PieChart >
           <Pie
             data={data}
             nameKey="duration"
             dataKey="value"
             innerRadius={85}
             outerRadius={110}
-            cx="40%"
+            cx="50%"
             cy="50%"
             paddingAngle={3}
           >
@@ -172,10 +173,10 @@ function DurationChart({ confirmedStays }) {
           <Tooltip />
           <Legend
             verticalAlign="middle"
-            align="right"
-            width="30%"
+            align="center"
+            width="45%"
             layout="vertical"
-            iconSize={15}
+            iconSize={10}
             iconType="circle"
           />
         </PieChart>

@@ -32,6 +32,7 @@ const Img = styled.img`
 `;
 
 const Cabin = styled.div`
+margin-top: 10px;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-600);

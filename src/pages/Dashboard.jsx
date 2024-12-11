@@ -6,7 +6,7 @@ import Row from "../ui/Row";
 function Dashboard() {
   return (
     <>
-      <Row type={window.innerWidth<=1200 ? "vertical" : "horizontal"}>
+      <Row type={window.innerWidth<=600 ? "vertical" : "horizontal"}>
         <Heading as="h1">Dashboard</Heading>
         <DashboardFilter />
       </Row>

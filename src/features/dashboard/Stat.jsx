@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const StyledStat = styled.div`
   /* Box */
+  width:50vw;
+  height: 80px;
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
@@ -16,6 +18,8 @@ const StyledStat = styled.div`
 `;
 
 const Icon = styled.div`
+width:50px;
+height:50px;
   grid-row: 1 / -1;
   aspect-ratio: 1;
   border-radius: 50%;
