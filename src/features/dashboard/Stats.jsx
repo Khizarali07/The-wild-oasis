@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import {
   HiOutlineBanknotes,
   HiOutlineBriefcase,
@@ -6,6 +7,29 @@ import {
 } from "react-icons/hi2";
 import Stat from "./Stat";
 import { formatCurrency } from "../../utils/helpers";
+
+const StatsContainer = styled.div`
+  width: 100%;
+  max-width: 120rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+`;
 
 function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
   // 1.
@@ -24,7 +48,7 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
   // num checked in nights / all available nights (num days * num cabins)
 
   return (
-    <div style={{width:"70vw",display:"flex", flexDirection:window.innerWidth<=600 ? "column" : "row", justifyContent:"center",alignItems:"center" ,gap:15}}>
+    <StatsContainer>
       <Stat
         title="Bookings"
         color="blue"
@@ -49,7 +73,7 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
         icon={<HiOutlineChartBar />}
         value={Math.round(occupation * 100) + "%"}
       />
-    </div>
+    </StatsContainer>
   );
 }
 

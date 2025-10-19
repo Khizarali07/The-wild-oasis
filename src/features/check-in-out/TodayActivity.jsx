@@ -9,7 +9,8 @@ import TodayItem from "./TodayItem";
 
 const StyledToday = styled.div`
   /* Box */
-  width: 445px;
+  width: 100%;
+  max-width: 120rem;
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
@@ -21,17 +22,22 @@ const StyledToday = styled.div`
   grid-column: 1 / span 2;
   padding-top: 2.4rem;
 
-  /* Media Query */
   @media (max-width: 768px) {
-    width: 100%; /* Adjust width for smaller screens */
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.6rem;
+    gap: 1.6rem;
   }
 `;
 
 
 const TodayList = styled.ul`
-width: 400px;
-  overflow: scroll;
- 
+  width: 100%;
+  overflow: auto;
+  max-height: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -42,10 +48,6 @@ width: 400px;
   }
   scrollbar-width: none;
   -ms-overflow-style: none;
-
-  @media (max-width: 768px) {
-    width: 100%; /* Adjust width for smaller screens */
-  }
 `;
 
 const NoActivity = styled.p`

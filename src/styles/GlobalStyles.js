@@ -111,6 +111,19 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+  
+  /* Responsive font sizes */
+  @media (max-width: 1200px) {
+    font-size: 56.25%; /* 9px */
+  }
+  
+  @media (max-width: 900px) {
+    font-size: 50%; /* 8px */
+  }
+  
+  @media (max-width: 600px) {
+    font-size: 50%; /* 8px */
+  }
 }
 
 body {
@@ -121,6 +134,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 input,

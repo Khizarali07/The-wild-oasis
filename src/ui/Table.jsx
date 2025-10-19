@@ -9,6 +9,16 @@ const StyledTable = styled.div`
   border-radius: 7px;
   overflow: hidden;
   margin-bottom: 50px;
+
+  @media (max-width: 1024px) {
+    overflow-x: auto;
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
 `;
 
 const CommonRow = styled.div`
@@ -17,6 +27,16 @@ const CommonRow = styled.div`
   column-gap: 2.4rem;
   align-items: center;
   transition: none;
+
+  @media (max-width: 1024px) {
+    column-gap: 1.6rem;
+    min-width: 900px;
+  }
+
+  @media (max-width: 768px) {
+    column-gap: 1.2rem;
+    min-width: 700px;
+  }
 `;
 
 const StyledHeader = styled(CommonRow)`
@@ -28,6 +48,15 @@ const StyledHeader = styled(CommonRow)`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-600);
+
+  @media (max-width: 1024px) {
+    padding: 1.4rem 1.6rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.2rem 1.2rem;
+    font-size: 1.1rem;
+  }
 `;
 
 const StyledRow = styled(CommonRow)`
@@ -35,6 +64,14 @@ const StyledRow = styled(CommonRow)`
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-grey-100);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 1rem 1.6rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1.2rem;
   }
 `;
 

@@ -49,10 +49,58 @@ const Header = styled.header`
     font-size: 2rem;
     margin-left: 4px;
   }
+
+  @media (max-width: 768px) {
+    padding: 1.6rem 2rem;
+    font-size: 1.6rem;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+
+    & div:first-child {
+      font-size: 1.6rem;
+      gap: 1.2rem;
+    }
+
+    & span {
+      font-size: 1.8rem;
+    }
+
+    svg {
+      height: 2.8rem;
+      width: 2.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.4rem;
+
+    & div:first-child {
+      font-size: 1.4rem;
+      gap: 0.8rem;
+    }
+
+    & span {
+      font-size: 1.6rem;
+    }
+
+    svg {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+  }
 `;
 
 const Section = styled.section`
   padding: 3.2rem 4rem 1.2rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.6rem 1.6rem 1rem;
+  }
 `;
 
 

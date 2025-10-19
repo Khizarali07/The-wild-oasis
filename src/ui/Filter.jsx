@@ -9,6 +9,10 @@ const StyledFilter = styled.div`
   padding: 0.4rem;
   display: flex;
   gap: 0.4rem;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -32,6 +36,12 @@ const FilterButton = styled.button`
   &:hover:not(:disabled) {
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
+  }
+
+  @media (max-width: 600px) {
+    flex: 1;
+    font-size: 1.2rem;
+    padding: 0.6rem 0.4rem;
   }
 `;
 

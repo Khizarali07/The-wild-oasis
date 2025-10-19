@@ -52,48 +52,44 @@ const StyledNavLink = styled(NavLink)`
     color: var(--color-brand-600);
   }
 
-  /* Hide text on small screens */
-  @media (max-width: 768px) {
-    span {
-      display: none;
-    }
-
-    /* Center align icons for better appearance */
-    justify-content: center;
-    padding: 1.2rem;
-  }
 `;
 
-function MainNav() {
+function MainNav({ setShowSidebar }) {
+  const handleClick = () => {
+    if (window.innerWidth <= 768 && setShowSidebar) {
+      setShowSidebar(false);
+    }
+  };
+
   return (
     <nav>
       <NavList>
         <li>
-          <StyledNavLink to="/dashboard">
+          <StyledNavLink to="/dashboard" onClick={handleClick}>
             <HiOutlineHome />
             <span>Home</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/bookings">
+          <StyledNavLink to="/bookings" onClick={handleClick}>
             <HiOutlineCalendarDays />
             <span>Bookings</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/cabins">
+          <StyledNavLink to="/cabins" onClick={handleClick}>
             <HiOutlineHomeModern />
             <span>Cabins</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/users">
+          <StyledNavLink to="/users" onClick={handleClick}>
             <HiOutlineUsers />
             <span>Users</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/settings">
+          <StyledNavLink to="/settings" onClick={handleClick}>
             <HiOutlineCog6Tooth />
             <span>Settings</span>
           </StyledNavLink>

@@ -9,11 +9,20 @@ import DurationChart from "./DurationChart";
 import TodayActivity from "../check-in-out/TodayActivity";
 
 const StyledDashboardLayout = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
- gap:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.6rem;
+  }
 `;
 
 function DashboardLayout() {

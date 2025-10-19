@@ -38,6 +38,11 @@ const StyledList = styled.ul`
 
   right: ${(props) => props.position.x}px;
   top: ${(props) => props.position.y}px;
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    min-width: 16rem;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -62,6 +67,17 @@ const StyledButton = styled.button`
     height: 1.6rem;
     color: var(--color-grey-400);
     transition: all 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1.6rem;
+    font-size: 1.3rem;
+    gap: 1.2rem;
+
+    & svg {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
   }
 `;
 

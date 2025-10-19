@@ -8,6 +8,11 @@ const StyledPagination = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
 `;
 
 const P = styled.p`
@@ -16,6 +21,12 @@ const P = styled.p`
 
   & span {
     font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    margin-left: 0;
+    text-align: center;
   }
 `;
 
@@ -56,6 +67,16 @@ const PaginationButton = styled.button`
   &:hover:not(:disabled) {
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+
+    & svg {
+      height: 1.6rem;
+      width: 1.6rem;
+    }
   }
 `;
 
