@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 // Use environment variables so keys are not checked into source control.
 // For Vite the variables should be prefixed with VITE_.
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
