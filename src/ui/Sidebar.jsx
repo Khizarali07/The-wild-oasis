@@ -8,8 +8,9 @@ const StyledSidebar = styled.aside`
   grid-row: 1 / -1;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: stretch;
   gap: 3.2rem;
+  padding: 3.2rem 2.4rem;
   transition: transform 0.3s ease-in-out;
 
   @media (max-width: 768px) {
@@ -19,6 +20,7 @@ const StyledSidebar = styled.aside`
     height: 100vh;
     width: 26rem;
     z-index: 1000;
+    padding: 2.4rem 1.6rem;
     transform: ${(props) =>
       props.showSidebar ? "translateX(0)" : "translateX(-100%)"};
     box-shadow: ${(props) =>
@@ -27,6 +29,7 @@ const StyledSidebar = styled.aside`
 
   @media (max-width: 480px) {
     width: 24rem;
+    padding: 2rem 1.2rem;
   }
 `;
 

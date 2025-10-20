@@ -29,13 +29,11 @@ const CommonRow = styled.div`
   transition: none;
 
   @media (max-width: 1024px) {
-    column-gap: 1.6rem;
-    min-width: 900px;
+    column-gap: 1.2rem;
   }
 
   @media (max-width: 768px) {
-    column-gap: 1.2rem;
-    min-width: 700px;
+    column-gap: 0.8rem;
   }
 `;
 

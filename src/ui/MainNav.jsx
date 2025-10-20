@@ -12,6 +12,7 @@ const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  width: 100%;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -51,7 +52,10 @@ const StyledNavLink = styled(NavLink)`
   &.active:visited svg {
     color: var(--color-brand-600);
   }
+`;
 
+const Nav = styled.nav`
+  width: 100%;
 `;
 
 function MainNav({ setShowSidebar }) {
@@ -62,7 +66,7 @@ function MainNav({ setShowSidebar }) {
   };
 
   return (
-    <nav>
+    <Nav>
       <NavList>
         <li>
           <StyledNavLink to="/dashboard" onClick={handleClick}>
@@ -95,7 +99,7 @@ function MainNav({ setShowSidebar }) {
           </StyledNavLink>
         </li>
       </NavList>
-    </nav>
+    </Nav>
   );
 }
 

@@ -29,25 +29,48 @@ const Img = styled.img`
   object-fit: cover;
   object-position: center;
   transform: scale(1.5) translateX(-7px);
+
+  @media (max-width: 768px) {
+    width: 5rem;
+    transform: scale(1.3) translateX(-5px);
+  }
 `;
 
 const Cabin = styled.div`
-margin-top: 10px;
+  margin-top: 10px;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: "Sono";
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Price = styled.div`
   font-family: "Sono";
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Discount = styled.div`
   font-family: "Sono";
   font-weight: 500;
   color: var(--color-green-700);
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+`;
+
+const Capacity = styled.div`
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 function CabinRow({ cabin }) {
@@ -79,7 +102,7 @@ function CabinRow({ cabin }) {
     <Table.Row>
       <Img src={image} />
       <Cabin>{name}</Cabin>
-      <div>Fits up to {maxCapacity} guests</div>
+      <Capacity>Fits up to {maxCapacity} guests</Capacity>
       <Price>{formatCurrency(regularPrice)}</Price>
       {discount ? (
         <Discount>{formatCurrency(discount)}</Discount>
